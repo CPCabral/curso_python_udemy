@@ -1,0 +1,18 @@
+'''
+Cuidados com dados mutáveis
+= - copiado o valor (imutáveis)
+= - aponta para o mesmo valor na memória (mutável)
+'''
+nome = "luiz"
+noutra_variavel = nome
+nome = "João"
+print(nome)
+print(noutra_variavel)
+
+lista_a = ["luiz", "Maria"]
+lista_b = lista_a
+lista_c = lista_a.copy()
+
+lista_a[0] = "qualquer coisa"
+print(lista_b)
+print(lista_c)

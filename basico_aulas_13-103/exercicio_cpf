@@ -1,0 +1,71 @@
+"""
+Calculo do primeiro dígito do CPF
+CPF: 746.824.890-70
+Colete a soma dos 9 primeiros dígitos do CPF
+multiplicando cada um dos valores por uma
+contagem regressiva começando de 10
+Ex.:  746.824.890-70 (746824890)
+   10  9  8  7  6  5  4  3  2
+*  7   4  6  8  2  4  8  9  0
+   70  36 48 56 12 20 32 27 0
+Somar todos os resultados: 
+70+36+48+56+12+20+32+27+0 = 301
+Multiplicar o resultado anterior por 10
+301 * 10 = 3010
+Obter o resto da divisão da conta anterior por 11
+3010 % 11 = 7
+Se o resultado anterior for maior que 9:
+    resultado é 0
+contrário disso:
+    resultado é o valor da conta
+O primeiro dígito do CPF é 7
+"""
+## epressões regulares
+import re
+import sys
+cpf_usuario = re.sub(r'[^0-9]','','746.824.890-70')
+
+entrada_e_sequencial = cpf_usuario == cpf_usuario[0] * len(cpf_usuario)
+
+if entrada_e_sequencial:
+    print('Você enviou dados sequenciais')
+    sys.exit
+
+### Cálculo digito 1 ###
+#cpf = '746.824.890-70'.replace('.','').replace('-','')
+cpf = '74682489070'
+nove_digitos = cpf[:9]
+soma_digito_1 = 0
+range_1 = 10
+for numero in nove_digitos:
+    soma_digito_1 += int(numero)*range_1
+    
+    # if numero == '-': break
+
+    # if numero != '.':
+    #     soma += int(numero)*range
+    # else:
+    #     continue
+    range_1 -= 1
+
+*_, digito_1, digito_2 = cpf
+resto = (soma_digito_1*10) % 11
+
+primeiro_digito = resto if resto <= 9 else 0
+resultado_digito_1 = True if primeiro_digito == int(digito_1) else False
+
+###Cálculo Digito 2###
+
+dez_digitos = nove_digitos + str(primeiro_digito)
+soma_digito_2 = 0
+range_2 = 11
+for numero in dez_digitos:
+    soma_digito_2 += int(numero)*range_2
+    range_2 -= 1
+
+resto_2 = (soma_digito_2*10) % 11
+
+segundo_digito = resto_2 if resto_2 <= 9 else 0
+resultado_digito_2 = True if segundo_digito == int(digito_2) else False
+
+print('O CPF é válido!' if resultado_digito_1 and resultado_digito_2 else 'Não é um CPF válido')
