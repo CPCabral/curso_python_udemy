@@ -27,3 +27,6 @@ print(f'{x=}')
 escopo()
 # print(x) erro, pois só está definido no escopo da função
 print(f'{x=}')
+
+a = complex(2)
+print(a)

@@ -21,7 +21,7 @@ print(f'a multiplicação entre os números {lista} = {resultado}')
 def epar(x):
     if x % 2 == 0:
         return print(f'{x} é par!')
-    return print(f'{x} é [impar!')
+    return print(f'{x} é ímpar!')
 
 epar(24)
 epar(25)
