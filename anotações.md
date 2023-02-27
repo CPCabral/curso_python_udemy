@@ -436,3 +436,15 @@ s5 = s1 - s2 # diferença - itens disponíveis apenas no primeito set
 s6 = s2 - s1 # diferença - itens disponíveis apenas no primeito set
 s7 = s1 ^ s2 # diferença simétrica - itens não presentes em ambos s5 | s6
 ```
+
+### Falsy
+lista = []
+dicionario = {}
+conjunto = set()
+tupla = ()
+string = ''
+inteiro = 0
+flutuante = 0.0
+nada = None
+falso = False
+intervalo = range(0)
