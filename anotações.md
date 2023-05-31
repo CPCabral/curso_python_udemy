@@ -448,3 +448,12 @@ flutuante = 0.0
 nada = None
 falso = False
 intervalo = range(0)
+
+
+
+#GIT
+
+git init
+git add .
+git commit -m 'comentário'
+git push
