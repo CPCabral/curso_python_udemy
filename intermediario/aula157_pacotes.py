@@ -3,7 +3,7 @@
 
 # criar aquivo na raiz para ser o __main__, a partir desse arquivo cria as outras coisas que serão chamadas
 
-
+print(__name__)
 # opção 1 (melhor)
 from aula157package.modulo import soma_do_modulo
 
